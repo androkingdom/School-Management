@@ -27,7 +27,7 @@ const addSchool = asyncHandler(async (req: Request, res: Response) => {
   }
 
   // Create new school
-  const school = await prisma.school.create({
+  const school: any = await prisma.school.create({
     data: { name, address, latitude, longitude },
   });
 
@@ -42,7 +42,7 @@ const listSchools = asyncHandler(async (req: Request, res: Response) => {
   const schools = await prisma.school.findMany();
 
   const schoolsWithDistance = schools
-    .map((school) => ({
+    .map((school: any) => ({
       ...school,
       distance: calculateDistance(
         latitude,
@@ -51,7 +51,7 @@ const listSchools = asyncHandler(async (req: Request, res: Response) => {
         school.longitude
       ),
     }))
-    .sort((a, b) => a.distance - b.distance);
+    .sort((a: any, b: any) => a.distance - b.distance);
 
   return res.json(
     SendRes.ok({

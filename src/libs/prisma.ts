@@ -1,4 +1,4 @@
-import { PrismaClient } from "@/generated/prisma";
+import { PrismaClient } from "@prisma/client";
 
 // In your prisma.ts file - add connection pooling
 export const prisma = new PrismaClient({
