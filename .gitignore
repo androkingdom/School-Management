@@ -1,4 +1,22 @@
+# Node
 node_modules
-# Keep environment variables out of version control
+
+# Env
 .env
-/src/generated/prisma
+.env.*.local
+
+# Prisma
+prisma/dev.db
+prisma/dev.db-journal
+prisma/migrations/
+
+# Generated code (optional if regenerated in CI/dev)
+src/generated/
+
+# Build
+dist/
+*.tsbuildinfo
+
+# System & editor junk
+.DS_Store
+.vscode/
